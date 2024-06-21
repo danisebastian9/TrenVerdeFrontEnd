@@ -22,7 +22,7 @@
 .hero-overlay {
     position: absolute;
     top: 40%;
-    transform: translate(115%, -50%);
+    transform: translate(85%, -50%);
     text-shadow: 0 3px 15px rgba(0, 0, 0, 1.9); /* Añade sombra al texto */
     z-index: 2;
     
