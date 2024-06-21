@@ -21,24 +21,32 @@ document.addEventListener("DOMContentLoaded", function() {
     const slideItems = document.querySelectorAll(".sliders li");
 
     let currentIndex = 0;
-    const totalSlides = slideItems.length;
-    const slideWidth = slideItems[0].clientWidth;
+    let totalSlides = slideItems.length;
+    let slideWidth = slideItems[0].clientWidth;
 
-    // Al hacer clic en el botón next//
+    // Al hacer clic en el botón next
     nextBtn.addEventListener("click", function() {
         currentIndex = (currentIndex + 1) % totalSlides;
         updateSlidePosition();
     });
 
-    // Al hacer clic en el botón prev//
+    // Al hacer clic en el botón prev
     prevBtn.addEventListener("click", function() {
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         updateSlidePosition();
     });
 
-    // Función para actualizar la posición de los sliders//
+    // Función para actualizar la posición de los sliders
     function updateSlidePosition() {
+        slideWidth = slideItems[0].clientWidth; // Recalcular el ancho del slide
         const newPosition = -currentIndex * slideWidth;
         slides.style.transform = `translateX(${newPosition}px)`;
     }
+
+    // Función para responsive
+    window.addEventListener("resize", function() {
+        slideWidth = slideItems[0].clientWidth; 
+        const newPosition = -currentIndex * slideWidth;
+        slides.style.transform = `translateX(${newPosition}px)`;
+    });
 });

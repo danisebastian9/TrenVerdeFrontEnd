@@ -1,0 +1,158 @@
+
+
+/* style slider*/ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  font-family: 'Poppins', sans-serif;
+  
+}
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.sliders {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  list-style-type: none;
+  
+}
+
+.sliders li {
+  min-width: 100%;
+}
+
+.sliders img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+/* style para secciones de información */
+
+.content-maps {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.content-maps h1 {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 60px;
+  transition: transform 0.3s ease;
+}
+
+.content-maps h1:hover {
+  transform: translateY(-5px);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+.info-section {
+  flex: 0 1 calc(50% - 20px);
+  margin-bottom: 40px;
+  text-align: justify;
+  border: 2px solid #b5dddd;
+  border-radius: 10px;
+  padding: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.info-section:hover {
+  border-color: #4f9eaa;
+}
+
+.info-section p {
+  text-align: justify;
+}
+.icon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-content img.icon {
+  width: 80px;
+}
+.info-section.wide {
+  flex: 1 1 100%;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  text-align: center;
+}
+.button-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.button-container button {
+  background-color: #2192fc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: auto; 
+  max-width: 100%; 
+}
+
+.button-container button:hover {
+  background-color: #2b4e7b;
+}
+
+/* style responsive*/
+@media (max-width: 768px) {
+  
+  
+  .info-section {
+    flex: 1 1 100%; 
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .info-section {
+    flex: 0 1 calc(50% - 20px); 
+  }
+}
