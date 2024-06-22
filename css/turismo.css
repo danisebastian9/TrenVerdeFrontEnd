@@ -10,6 +10,30 @@
     box-shadow: 0 10px 15px rgba(0, 0, 0, 1.5); 
 }
 
+/* style para el icono de flecha */
+
+.volver {
+    display: inline-flex; 
+    align-items: center; 
+    margin-left: 25px;
+    
+}
+
+.icono-flecha {
+    width: 35px; 
+    height: 32px; 
+    margin-right: 10px; 
+    margin-left: 10px;
+    transition: transform 0.3s ease-out; 
+    cursor: pointer;
+}
+
+.volver:hover .icono-flecha {
+    transform: translateX(-5px); 
+}
+
+
+
 @media (max-width: 550px) {
     #features .imagenes {
       display: none;

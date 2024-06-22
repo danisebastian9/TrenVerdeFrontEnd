@@ -1,0 +1,145 @@
+
+
+
+*{
+    font-family: Poppins, sans-serif;
+}
+
+.contact-section {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.contacto-container {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2192fc;
+}
+
+.columns-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-column, .right-column {
+    width: 45%;
+    padding: 20px;
+    border: 2px solid #2e517b;
+    border-radius: 10px;
+}
+
+.left-column {
+    text-align: center;
+    padding: 30px; 
+    border-radius: 10px;
+    margin-top: 20px; 
+    border: none; 
+}
+
+.left-column h2 {
+    font-weight: bold;
+    color: #3e517b;
+    margin-bottom: 15px; 
+}
+
+.left-column p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.icons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: center; 
+    margin-top: 15px; 
+}
+
+.icon-item {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px; 
+}
+
+.icon-item img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+
+.right-column {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; 
+}
+
+label {
+    font-weight: bold;
+    color: #495057;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select { 
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #041422;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.button-container {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+button[type="submit"] {
+    background-color: #47e5c2;
+    color: #3e517b;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    transition: background-color 0.3s ease;
+    margin-top: 15px; 
+   
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    
+    
+}
+
+/*  style para el select */
+select {
+    padding: 10px; 
+    background-color: #ffffff; 
+    margin-top: 5px; 
+}
+
+/*responsive*/
+@media (max-width: 768px) {
+    .columns-container {
+        flex-direction: column; /* Apila las columnas una encima de otra en pantallas pequeñas */
+    }
+
+    .left-column, .right-column {
+        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    }
+}
