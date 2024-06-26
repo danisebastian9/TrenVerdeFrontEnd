@@ -1,0 +1,264 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+/*  clase nueva-reserva */
+.nueva-reserva {
+  position: relative;
+  width: 100%;
+  text-align: center; 
+}
+
+
+.nueva-reserva h1 {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3b305e; 
+  z-index: 1; 
+  font-size: 80px;
+}
+
+
+.nueva-reserva .fondo-img img {
+  width: 1517px;
+  height: 556px;
+  opacity: 0.8; 
+}
+
+
+.contenido {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+/* secciones section-1 y section-2 */
+.section-1,
+.section-2 {
+  flex: 1;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: #ffffff; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  min-height: 300px; 
+  margin-bottom: 20px; 
+ 
+  
+}
+
+/*  íconos y textos de las secciones */
+.section-1 h2,
+.section-2 h2 {
+  display: flex;
+  align-items: center;
+  color: #007bff; 
+  margin-bottom: 10px;
+}
+
+.section-1 .icon,
+.section-2 .icon {
+  margin-right: 10px;
+  width: 30px; 
+  height: auto;
+  
+}
+
+/*  section-2 (Mis Reservas) */
+.section-2 {
+  border: 2px solid #007bff; 
+  border-radius: 10px; 
+  padding: 15px;
+  
+}
+
+.contenido {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* style para las secciones section-1 y section-2 */
+.section-1,
+.section-2 {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  min-height: 400px; 
+  margin-bottom: 30px; 
+}
+
+/* style de íconos y textos de las secciones */
+.section-1 h2,
+.section-2 h2 {
+  display: flex;
+  align-items: center;
+  color: #007bff; 
+  margin-bottom: 10px;
+}
+
+.section-1 .icon,
+.section-2 .icon {
+  margin-right: 10px;
+  width: 30px; 
+  height: auto;
+}
+
+/* styles específicos para la section-2 (Mis Reservas) */
+.section-2 {
+  border: 2px solid #007bff; 
+  border-radius: 10px; 
+  padding: 15px;
+}
+
+
+/* styles para el formulario */
+.nueva-reserva form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+  
+}
+
+/* styles para las etiquetas */
+.nueva-reserva form label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: right;
+  text-align: justify;
+
+/* Alinear elementos en las columnas */
+.nueva-reserva form label[for="tipoDocumento"],
+.nueva-reserva form label[for="nombre"],
+.nueva-reserva form label[for="email"],
+.nueva-reserva form label[for="fecha"],
+.nueva-reserva form label[for="Destino"] {
+  grid-column: 1;
+}
+
+.nueva-reserva form select#tipoDocumento,
+.nueva-reserva form input#nombre,
+.nueva-reserva form input#email,
+.nueva-reserva form input#fecha,
+.nueva-reserva form select#Destino {
+  grid-column: 2;
+}
+
+.nueva-reserva form label[for="numeroDocumento"],
+.nueva-reserva form label[for="telefono"],
+.nueva-reserva form label[for="numeroPuesto"],
+.nueva-reserva form label[for="hora"] {
+  grid-column: 3;
+}
+
+.nueva-reserva form input#numeroDocumento,
+.nueva-reserva form input#telefono,
+.nueva-reserva form select#numeroPuesto,
+.nueva-reserva form input#hora {
+  grid-column: 4;
+}
+
+/* style para los inputs y selects */
+.nueva-reserva form input,
+.nueva-reserva form select {
+  width: 100%;
+  padding: 8px;
+  flex: 2;
+  
+}
+}
+
+
+
+/*style para contenedor de buttons*/
+
+
+
+.button-container {
+  display: flex;
+  justify-content:center; /* Centra los botones horizontalmente */
+  margin-top: 20px; 
+}
+
+/* Estilos para los botones */
+.btn-agendar,
+.btn-cancelar {
+  padding: 10px 20px;
+  margin: 0 10px; 
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-agendar {
+  background-color: #fff;
+  color: #2192fc;
+  border-color: #2192fc;
+}
+
+.btn-cancelar {
+  background-color: #fff;
+  color: #a59dfd;
+  border-color: #a59dfd;
+}
+
+.btn-agendar:hover,
+.btn-cancelar:hover {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-agendar:hover {
+  background-color: #2192fc;
+  border-color: #2192fc;
+}
+
+.btn-cancelar:hover {
+  background-color: #a59dfd;
+  border-color: #a59dfd;
+}
+
+
+
+  /*responsive*/
+@media (max-width: 768px) {
+  .nueva-reserva {
+    text-align: center; /*  texto centrado en dispositivos pequeños */
+  }
+
+  .nueva-reserva h1 {
+    font-size: 48px; /* reduce el tamaño de la fuente del encabezado */
+    top: 5%; /* ajusta el título */
+  }
+
+  .nueva-reserva .fondo-img img {
+    width: 100%; /* imagen responsive */
+    height: auto;
+    opacity: 0.8;
+  }
+
+  .contenido {
+    flex-direction: column; /* adapta la secciones en dispositivos pequeños */
+  }
+
+  .section-1,
+  .section-2 {
+    padding: 15px; /*  padding de secciones */
+  }
+
+  .nueva-reserva form {
+    grid-template-columns: 1fr; /* Una columna en dispositivos pequeños */
+  }
+}

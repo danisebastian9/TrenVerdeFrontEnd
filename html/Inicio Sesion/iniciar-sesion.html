@@ -1,0 +1,222 @@
+<!--
+Este archivo HTML representa la página de Inicio de sesión que le permite al usuario
+ingresar con sus credenciales a su cuenta (personal/empresa) dentro de la 
+aplicación web.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar Sesión</title>
+        <link rel="stylesheet" href="../../css/header.css">
+        <link rel="stylesheet" href="../../css/form-registro.css">
+        <link rel="stylesheet" href="../../css/footer.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/77c4e13a1c.js" crossorigin="anonymous"></script>
+        <script defer src="https://media.twiliocdn.com/sdk/js/webchat-v3/releases/1.1.0/webchat.min.js" integrity="sha256-c1l/wwVPqGd5P7Wni+vQ85wSk0UCDqZyUDQRJBKRQO0=" crossorigin="anonymous"></script>
+        
+    <script>
+        async function registrarUsuario() {
+            const tipoDocumento = document.getElementById('tipo-documento').value;
+            const numeroDocumento = document.getElementById('numero-documento').value;
+            const nombre = document.getElementById('nombre').value;
+            const genero = document.getElementById('genero').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
+            const direccion = document.getElementById('direccion').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const mensaje = document.getElementById('mensaje');
+            mensaje.textContent = '';
+
+            try {
+                const response = await fetch('http://127.0.0.1:8090/trenverde/api/usuarios/registro_usuario', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        tipoDocumento,
+                        numeroDocumento,
+                        nombre,
+                        genero,
+                        email,
+                        telefono,
+                        fechaNacimiento,
+                        direccion,
+                        username,
+                        password,
+                        roles: [{ idRol: 3 }]
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Error ${response.status}: ${errorText}`);
+                }
+
+                const nuevoUsuario = await response.json();
+                mensaje.textContent = `Usuario: ${nuevoUsuario.username} registrado con exito!`;
+            } catch (error) {
+                mensaje.textContent = `Error: ${error.message}`;
+                console.error('Error al registrar usuario:', error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <nav id="nav-bar">
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-Links">
+                <li class="headerImage"><a class="nav-link" href="../../index.html"><img id="header-img" src="../../img/trenLogo.jpeg" alt="Company logo"></a></li>
+                <li><a class="nav-link" href="../../index.html">Inicio</a></li>
+                <li><a class="nav-link" href="../../html/Rutas/Rutas.html">Rutas</a></li>
+                <li><a class="nav-link" href="../../html/Turismo/Turismo.html">Turismo</a></li>
+                <li><a class="nav-link" href="../../html/Carga Pesada/carga-pesada.html">Carga</a></li>
+                <li><a class="nav-link" href="#">Noticias</a></li>
+                <li><a id="loginLink" class="nav-link" href="#">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr size="1%" width="0%" color="white">
+    <main>
+        <section class="registration-form">
+            <h1>Crear una cuenta personal</h1>
+            <form onsubmit="event.preventDefault(); registrarUsuario();">
+                <div class="form-row">
+                    <label for="tipo-documento">Tipo de Documento</label>
+                    <select id="tipo-documento" name="tipo-documento">
+                        <option value="Cédula">Cédula de Ciudadania</option>
+                        <option value="Tarjeta Identidad">Tarjeta de Identidad</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="Cédula Extranjeria">Cedula Extranjeria</option>
+                        <option value="NIT">NIT</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="numero-documento">Número de Documento</label>
+                    <input type="text" id="numero-documento" name="numero-documento" required>
+                </div>
+                <div class="form-row">
+                    <label for="nombre">Nombres Y Apellidos</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-row">
+                    <label for="genero">Género</label>
+                    <select id="genero" name="genero" required>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-row">
+                    <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                </div>
+                <div class="form-row">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                <div class="form-row">
+                    <label for="username">Nombre Usuario</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-row">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" minlength="8" required>
+                </div>
+                <div class="form-row">
+                    <button type="submit">Crear cuenta</button>
+                </div>
+            </form>
+            <p id="mensaje"></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__logo">
+                <img src="../../img/trenLogo.jpeg" alt="Logo Tren Verde" class="footer__logo-img">
+                <h2 class="footer__title">Tren Verde</h2>
+            </div>
+            <div class="footer__column footer__column--mapa">
+                <h3 class="footer__heading">Mapa del sitio</h3>
+                <ul class="footer__list">
+                    <li><a href="../../index.html" class="footer__link">Inicio</a></li>
+                    <li><a href="../../html/Rutas/Rutas.html" class="footer__link">Rutas</a></li>
+                    <li><a href="../../html/Turismo/Turismo.html" class="footer__link">Turismo</a></li>
+                    <li><a href="../../html/Carga Pesada/carga-pesada.html" class="footer__link">Carga</a></li>
+                    <li><a href="#" class="footer__link">Noticias</a></li>
+                    <li><a href="../../html/Registro/registro-empresa.html" class="footer__link">Registro</a></li>
+                    <li><a href="#" class="footer__link">Inicio sesión</a></li>
+                </ul>
+            </div>
+            <div class="footer__column footer__column--utilidades">
+                <h3 class="footer__heading">Utilidades</h3>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">Contacto</a></li>
+                    <li><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                    <li><a href="#" class="footer__link">Privacidad</a></li>
+                    <li><a href="#" class="footer__link">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer__column footer__column--desarrollado">
+                <h3 class="footer__heading">Desarrollado por:</h3>
+                <ul class="footer__list">
+                    <li>Adriana Lucía Caicedo López</li>
+                    <li>Carmen Lucía Castro Ruiz</li>
+                    <li>Daniel Sebastián Cubides Suárez</li>
+                    <li>Felipe Andrés López</li>
+                    <li>Nohad Farid El Khatib Rodríguez</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link">
+                    <img src="../../img/facebook.png" alt="Facebook">
+                </a>
+                <a href="#" class="footer__social-link">
+                    <img src="../../img/twitter.png" alt="Twitter">
+                </a>
+                <a href="#" class="footer__social-link">
+                    <img src="../../img/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="#" class="footer__social-link">
+                    <img src="../../img/email.png" alt="Email">
+                </a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2024 Tren Verde, Inc</p>
+        </div>
+        <div id="twilio-webchat-widget-root"></div>
+        <script>
+            window.addEventListener("load", () => {
+              const appConfig = {
+                 deploymentKey: "CVc8f2aefad95827c36140560e96194e20"
+              }
+              Twilio.initWebchat(appConfig); 
+            })
+          </script>
+    </footer>
+
+</body>
+<script src="../../js/app.js"></script>
+</html>

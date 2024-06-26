@@ -1,0 +1,195 @@
+<!-- Este frame tiene la estructura del formulario para poder hacer reservas 
+ dentro de la aplicación web.Cuenta con 2 botones y 2 iconos para representar
+ de forma mas didpáctica la opción de reserva -->
+
+
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva con Nosotros</title>
+    <link rel="stylesheet" href="../../css/style-reserva.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/77c4e13a1c.js" crossorigin="anonymous"></script>
+    <script defer src="https://media.twiliocdn.com/sdk/js/webchat-v3/releases/1.1.0/webchat.min.js" integrity="sha256-c1l/wwVPqGd5P7Wni+vQ85wSk0UCDqZyUDQRJBKRQO0=" crossorigin="anonymous"></script>
+ </head>
+ <body>
+    <div id="page-wrapper">
+        <header id="header">
+            <nav id="nav-bar">
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="nav-Links">
+                    <li class="headerImage"><a class="nav-link" href="../../index.html"><img id="header-img" src="../../img/trenLogo.jpeg" alt="Company logo"></a></li>
+                    <li><a class="nav-link" href="../../index.html">Inicio</a></li>
+                    <li><a class="nav-link" href="../../html/Rutas/Rutas.html">Rutas</a></li>
+                    <li><a class="nav-link" href="../../html/Turismo/Turismo.html">Turismo</a></li>
+                    <li><a class="nav-link" href="../../html/Carga Pesada/carga-pesada.html">Carga</a></li>
+                    <li><a class="nav-link" href="#">Noticias</a></li>
+                    <li><a id="loginLink" class="nav-link" href="#">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        
+        <div class="nueva-reserva">
+          <h1>Reserva tu Puesto</h1>
+          <div class="fondo-img">
+            <img src="../../html/Rutas/images/img-2.jpeg" alt="fondo-content">
+
+          </div>
+          <div class="contenido">
+          <section class="section-1">
+            <h2><img src="../../html/Rutas/images/reserva-nueva.png" alt="Icono nueva reserva" class="icon"> Nueva Reserva</h2>
+            <form action="#">
+              <label for="tipoDocumento">Tipo de Documento</label>
+              <select id="tipoDocumento" name="tipoDocumento">
+                <option value="seleccion">Selección</option>
+                <option value="cedula">Cédula de Ciudadanía</option>
+                <option value="cedulaExtranjera">Cédula Extranjera</option>
+                <option value="pasaporte">Pasaporte</option>
+                <option value="nit">NIT</option>
+              </select>
+              
+              <label for="numeroDocumento">Número de Documento</label>
+              <input type="text" id="numeroDocumento" name="numeroDocumento">
+              
+              <label for="nombre">Nombre o Razón Social</label>
+              <input type="text" id="nombre" name="nombre">
+              
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" name="email">
+              
+              <label for="telefono">Número de Contacto</label>
+              <input type="tel" id="telefono" name="telefono">
+              
+              <label for="numeroPuesto">Número de Puesto</label>
+              <select id="numeroPuesto" name="numeroPuesto">
+                <option value="seleccion">Selección</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha">
+    
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" name="hora">
+              
+              <label for="Destino"> Destino</label>
+              <select id="Destino" name="Destino">
+                <option value="seleccion">Selección</option>
+                <option value="yacopi">Yacopí</option>
+                <option value="penon">El Peñón</option>
+                <option value="palma">La Palma</option>
+                <option value="rionegro">Rionegro</option>
+                <option value="chinquinquira">Chinquinquirá</option>
+              </select>
+
+ 
+            </form>
+            <div class="button-container">
+                <button type="submit" class="btn-agendar">Agendar</button>
+                <button type="submit" class="btn-cancelar">Cancelar </button>
+              </div>
+              
+          </section>
+          
+          <section class="section-2">
+            <h2><img src="../../html/Rutas/images/mis-reservas.png" alt="Icono mis reservas" class="icon"> Mis Reservas</h2>
+            <!--  mostrar las reservas previas del usuario si las hubiera -->
+            <p>No tienes reservas actuales.</p>
+          </section>
+        </div>
+        
+        
+
+
+
+        <footer class="footer">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="../../img/trenLogo.jpeg" alt="Logo Tren Verde" class="footer__logo-img">
+                    <h2 class="footer__title">Tren Verde</h2>
+                </div>
+                <div class="footer__column footer__column--mapa">
+                    <h3 class="footer__heading">Mapa del sitio</h3>
+                    <ul class="footer__list">
+                        <li><a href="../../index.html" class="footer__link">Inicio</a></li>
+                        <li><a href="../../html/Rutas/Rutas.html" class="footer__link">Rutas</a></li>
+                        <li><a href="../html/Turismo/Turismo.html" class="footer__link">Turismo</a></li>
+                        <li><a href="../../html/Carga Pesada/carga-pesada.html" class="footer__link">Carga</a></li>
+                        <li><a href="#" class="footer__link">Noticias</a></li>
+                        <li><a href="../../html/Registro/registro-empresa.html" class="footer__link">Registro</a></li>
+                        <li><a href="#" class="footer__link">Inicio sesión</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column footer__column--utilidades">
+                    <h3 class="footer__heading">Utilidades</h3>
+                    <ul class="footer__list">
+                        <li><a href="../../html/Rutas/Contactanos/Contactanos.html" class="footer__link">Contacto</a></li>
+                        <li><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                        <li><a href="#" class="footer__link">Privacidad</a></li>
+                        <li><a href="#" class="footer__link">Términos</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column footer__column--desarrollado">
+                    <h3 class="footer__heading">Desarrollado por:</h3>
+                    <ul class="footer__list">
+                        <li>Adriana Lucía Caicedo López</li>
+                        <li>Carmen Lucía Castro Ruiz</li>
+                        <li>Daniel Sebastián Cubides Suárez</li>
+                        <li>Felipe Andrés López</li>
+                        <li>Nohad Farid El Khatib Rodríguez</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link">
+                        <img src="../../img/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <img src="../..//img/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <img src="../..//img/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <img src="../..//img/email.png" alt="Email">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 Tren Verde, Inc</p>
+            </div>
+        </footer>
+    
+            
+            <div id="twilio-webchat-widget-root"></div>
+    <script>
+      window.addEventListener("load", () => {
+        const appConfig = {
+           deploymentKey: "CVc8f2aefad95827c36140560e96194e20"
+        }
+        Twilio.initWebchat(appConfig); 
+      })
+    </script>
+    
+    
+     </body>
+     <script src="../../js/app.js"></script>
+     </html>

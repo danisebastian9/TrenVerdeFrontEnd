@@ -1,0 +1,167 @@
+* {
+    font-family: Poppins, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    font-size: 28px; 
+    margin-bottom: 10px;
+    text-align: center;
+    color: #3e517b;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify; 
+    margin-top: 0; 
+}
+
+.section-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #4856f8; 
+    border-radius: 5px;
+}
+
+.section-container .text-container {
+    flex: 1;
+    padding: 20px;
+    text-align: left; 
+}
+
+.section-container .image-container {
+    flex: 1;
+    padding: 20px;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.section-container .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.section-container .image-container:hover img {
+    transform: scale(1.1); 
+}
+
+.reserve-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #ffffff; 
+    color: #2192fc; 
+    border: 2px solid #2192fc; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold; 
+    text-decoration: none; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.reserve-button:hover {
+    background-color: #2192fc; 
+    color: #ffffff; 
+    cursor: pointer;
+}
+
+
+.section-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.section-container.reverse .image-container {
+    order: 1; 
+    padding-right: 20px; 
+}
+
+.section-container.reverse .text-container {
+    text-align: right; 
+    padding-left: 20px; 
+}
+
+.section-container.reverse .text-container h1 {
+    text-align: center; 
+    margin-top: 0; 
+}
+
+.section-container h1,
+.section-container p {
+    margin-bottom: 10px; 
+}
+
+
+/* style para el icono de flecha */
+
+.volver {
+    display: inline-flex; 
+    align-items: center; 
+    margin-left: 15px;
+    
+}
+
+.icono-flecha {
+    width: 50px; 
+    height: 50px; 
+    margin-right: 5px; 
+    transition: transform 0.3s ease-out; 
+    cursor: pointer;
+}
+
+.volver:hover .icono-flecha {
+    transform: translateX(-5px); 
+}
+
+/*responsive*/ 
+@media screen and (max-width: 768px) {
+    .section-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-container .text-container,
+    .section-container .image-container {
+        padding: 10px;
+    }
+
+    .section-container:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+
+    .section-container:nth-child(odd) .image-container {
+        padding-left: 0;
+        padding-bottom: 20px;
+    }
+
+    .section-container:nth-child(odd) .text-container {
+        padding-right: 0;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .reserve-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        
+    }
+}
