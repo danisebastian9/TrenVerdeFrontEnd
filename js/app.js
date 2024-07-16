@@ -50,3 +50,5 @@ document.addEventListener("DOMContentLoaded", function() {
         slides.style.transform = `translateX(${newPosition}px)`;
     });
 });
+
+

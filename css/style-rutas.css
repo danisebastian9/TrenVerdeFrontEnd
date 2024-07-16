@@ -69,6 +69,9 @@
   margin-bottom: 60px;
   transition: transform 0.3s ease;
 }
+h1{
+  color: #2b4e7b;
+}
 
 .content-maps h1:hover {
   transform: translateY(-5px);
@@ -143,6 +146,49 @@
   background-color: #2b4e7b;
 }
 
+/*style for maps*/
+#map-container {
+  position: relative;
+  display: inline-block; 
+  max-width: 100%; 
+}
+
+#mapa-municipios {
+  width: 100%; 
+  height: auto; 
+}
+
+
+
+.marker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease-out;
+  cursor: pointer; 
+}
+
+
+.marker.enlarged {
+  transform: translate(-50%, -50%) scale(1.5); 
+}
+
+.marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+
+.marker {
+  width: 2vw;
+  height: 2vw;
+}
+
+
+.marker.enlarged {
+  transform: scale(1.5);
+}
 
 /* style responsive*/
 @media (max-width: 768px) {
@@ -157,5 +203,24 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .info-section {
     flex: 0 1 calc(50% - 20px); 
+  }
+}
+
+@media (min-width: 768px) {
+  
+  .marker {
+    width: 24px; 
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+  #map-container {
+    padding: 10px; 
+  }
+  .marker {
+    width: 16px; 
+    height: 16px;
   }
 }

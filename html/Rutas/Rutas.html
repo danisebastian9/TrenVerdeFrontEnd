@@ -91,12 +91,88 @@ las rutas y planes que ofrece la compañía. -->
                 <h1>
                     Conoce nuestras rutas
                 </h1>
-                <p>
+                <div id="map-container">
+                    <img src="images/Mapa_Cundinamarca.jpg" alt="Mapa de Cundinamarca" usemap="#mapa-cundinamarca" 
+                    id="mapa-municipios">
+                    <img src="images/marca.png" alt="Marca 1" class="marker" id="marker1">
+                    <img src="images/marca.png" alt="Marca 2" class="marker" id="marker2">
+                    <img src="images/marca.png" alt="Marca 3" class="marker" id="marker3">
+                    <img src="images/marca.png" alt="Marca 4" class="marker" id="marker4">
+                </div>
+	    <map name="mapa-cundinamarca">
 
-                </p>
+             
+            <area target="_blank"  coords="301,39,296,44,289,48,282,52,275,51,274,
+            61,272,66,271,72,267, 78,265,85,258,93,260,100,268,102,277,101,282,108,284,118,286,123,281,127,
+            281,133,277,140,278,147,275,155,272,167,279,171,287,162,295,163,301,169,298,179,303,180,310,183,
+            316,186,322,188,329,193,331,204,339,209,344,211,351,211,344,218,362,211,362,200,364,193,368,186,
+            357,176,363,172,360,181,375,170,380,169,384,162,386,156,381,148,373,140,363,135,357,122,354,131,
+            348,132,343,126,336,121,330,118,321,115,321,106,315,103,310,97,308,90,306,83,315,74,315,67,308,67,
+            308,58,306,52,305,43" alt="Yacopi" class="yacopi" href="Yacopi.html" shape="poly"  data-marker="marker1">
+                   
+            <area target="_blank"  coords="309,262,305,254,298,255,294,262,286,259,287,
+            271,290,277,287,284,286,292,287,297,297,299,307,308,310,315,315,318,323,316,333,313,338,309,343,304,
+            343,295,342,288,335,275,336,267,341,258,347,254,353,243,358,232,360,221,355,217,345,219,335,227,333,
+            233,330,242,322,250,315,257,338,281,318,262" alt="La Palma" class="lapalma" href="La Palma.html" shape="poly" data-marker="marker2">
+       
+            <area target="_blank"  coords="328,318,318,318,315,323,314,332,315,337,319,
+            343,315,350,315,356,317,364,326,366,318,369,333,363,335,355,340,351,336,340,340,330,334,323" 
+            alt="El Penon" class="elpenon" href="El Penon.html" shape="poly" data-marker="marker3">
+        
+            <area target="_blank"  coords="404,129,397,129,391,132,387,137,386,144,
+            385,150,387,165,390,157,380,172,368,174,372,180,377,187,384,187,391,194,400,192,407,190,415,189,
+            423,185,429,185,440,175,447,172,454,171,458,163,464,160,470,153,472,144,458,134,452,126,444,121,
+            434,116,431,108,424,101,416,106,408,108,403,123,468,137,404,116,436,180" 
+            alt="Rionegro" class="rionegro" href="Rionegro.html" shape="poly" data-marker="marker4">
 
+        </map>
+                
             </div>
+            <script>
+            
+            document.addEventListener('DOMContentLoaded', function() {
+  const areas = document.querySelectorAll('area');
+  const markers = document.querySelectorAll('.marker');
 
+  // Función para posicionar los marcadores
+  const positionMarker = (coords, marker) => {
+  const xCoords = coords.filter((_, index) => index % 2 === 0);
+  const yCoords = coords.filter((_, index) => index % 2 !== 0);
+  const minX = Math.min(...xCoords);
+  const maxX = Math.max(...xCoords);
+  const minY = Math.min(...yCoords);
+  const maxY = Math.max(...yCoords);
+
+  const parentWidth = marker.parentElement.offsetWidth;
+  const parentHeight = marker.parentElement.offsetHeight;
+
+  const centerX = ((minX + maxX) / 2) / parentWidth * 100;
+  const centerY = ((minY + maxY) / 2) / parentHeight * 100;
+
+  marker.style.left = `${centerX}%`;
+  marker.style.top = `${centerY}%`;
+};
+
+
+  
+  areas.forEach((area, index) => {
+    const marker = markers[index]; // Obtén el marcador correspondiente
+    positionMarker(area.coords.split(',').map(coord => parseInt(coord)), marker);
+
+    // Añade eventos para el marcador
+    area.addEventListener('mouseover', () => {
+      marker.classList.add('enlarged');
+    });
+
+    area.addEventListener('mouseout', () => {
+      marker.classList.remove('enlarged');
+    });
+  });
+});
+
+</script>
+
+           
         </section>
 
 
