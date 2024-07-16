@@ -36,7 +36,17 @@
   justify-content: space-between;
   margin-top: 20px;
 }
+.btn-cerrar {
+  position: absolute;
+  top: 15px; 
+  right: 30px; 
+  cursor: pointer; 
+}
 
+.btn-cerrar img {
+  width: 28px; 
+  height: auto; 
+}
 
 /* secciones section-1 y section-2 */
 .section-1,

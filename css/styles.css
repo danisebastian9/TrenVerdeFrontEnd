@@ -85,6 +85,28 @@ color: #2D9BF0;
 display: flex;
 }
 
+.volver {
+  display: inline-flex; 
+  align-items: center; 
+  margin-left: 15px;
+  
+}
+
+.icono-flecha {
+  width: 50px; 
+  height: 50px; 
+  margin-right: 5px; 
+  transition: transform 0.3s ease-out; 
+  cursor: pointer;
+}
+
+.volver:hover .icono-flecha {
+  transform: translateX(-5px); 
+}
+
+
+
+
 /* Responsive imagen home */ 
 
 @media screen and (max-width: 930px) {

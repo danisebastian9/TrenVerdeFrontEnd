@@ -111,6 +111,10 @@
     background-color: #27ae60;
 }
 
+
+
+
+
 /* Media queries para ajustes responsivos */
 @media (max-width: 768px) {
     .hero-overlay {

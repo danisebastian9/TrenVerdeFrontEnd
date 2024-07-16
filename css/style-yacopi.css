@@ -40,8 +40,8 @@ p {
 .section-container .image-container {
     flex: 1;
     padding: 20px;
-    position: relative; /* Añadir posición relativa para manejar la animación */
-    overflow: hidden; /* Ocultar partes de la imagen que salgan del contenedor */
+    position: relative; 
+    overflow: hidden; 
 }
 
 .section-container .image-container img {

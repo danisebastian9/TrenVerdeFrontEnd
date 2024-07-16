@@ -172,7 +172,17 @@ select {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
-
+.btn-cerrar {
+    position: absolute;
+    top: 100px; 
+    right: 30px; 
+    cursor: pointer; 
+  }
+  
+  .btn-cerrar img {
+    width: 28px; 
+    height: auto; 
+  }
 
 /* Responsive */
 @media (max-width: 768px) {
