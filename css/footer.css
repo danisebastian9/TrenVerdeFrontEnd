@@ -3,23 +3,22 @@
     background-color: #344955; /* Fondo del footer */
     padding: 20px;
     border-top: 1px solid #dcdcdc;
-    font-family: Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     color: #fff; /* Texto en blanco */
 }
 
 /* Layout for the content area */
 .footer__content {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    align-items: flex-start;
 }
 
 /* Styling for the logo section */
 .footer__logo {
     display: flex;
     align-items: center;
-    margin-bottom: 150px; /* Ajuste de margen para separación vertical */
+    margin-right: 4vw;
 }
 
 .footer__logo-img {
@@ -37,27 +36,6 @@
 /* Styling for each column in the footer */
 .footer__column {
     flex: 1;
-    margin-bottom: 20px; /* Ajuste de margen para separación vertical */
-    min-width: 150px; /* Asegurar un tamaño mínimo para columnas */
-}
-
-/* Personalización de la posición de las columnas */
-.footer__column--mapa {
-    /* Cambie estos valores para ajustar la posición */
-    margin-top: 10px; /* Movimiento en el eje Y */
-    margin-left: 155px; /* Movimiento en el eje X */
-}
-
-.footer__column--utilidades {
-    /* Cambie estos valores para ajustar la posición */
-    margin-top: 10px; /* Movimiento en el eje Y */
-    margin-left: 30px; /* Movimiento en el eje X */
-}
-
-.footer__column--desarrollado {
-    /* Cambie estos valores para ajustar la posición */
-    margin-top: 10px; /* Movimiento en el eje Y */
-    margin-left: 50px; /* Movimiento en el eje X */
 }
 
 .footer__heading {
@@ -102,7 +80,7 @@
 
 .footer__social {
     display: flex; 
-    justify-content: right; /* Centrar los iconos */
+    justify-content: center; /* Centrar los iconos */
     margin-left: 10px; /* Ajuste de margen */
 }
 
@@ -115,4 +93,43 @@
     height: auto; 
     border: 1px solid #fff;  /* Borde blanco para los iconos de redes sociales */
     transform: translateX(-10px) translateY(-10px);
+}
+
+/* Footer responsive   */
+
+
+@media screen and (max-width: 800px) {
+
+    .footer__content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-height: 40vh;
+    }
+  
+    .footer__column {
+        justify-self: space-around;
+    }
+
+    .footer__logo {
+        margin-bottom: 4vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer__content {
+        font-size: 3vw;
+    }
+
+    .footer__logo {
+        margin-right: 3vw;
+    }
+
+    .footer__title {
+        font-size: 4vw;
+    }
+
+    .footer__logo-img {
+        margin-right: 5px;
+    }
 }
