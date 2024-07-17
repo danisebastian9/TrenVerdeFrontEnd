@@ -11,71 +11,91 @@ body {
     font-family:'Poppins', sans-serif;
 }
 
-#page-wrapper {
-  position: relative;
+
+/*style login*/
+.registration-form {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #1f888e; /* Cambia color marco registro */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra marco registro */
+    background-color: #ffffff; /* Cambia el color del fondo del formulario */
 }
 
-#nav-bar {
-    height: 10vh;
-    background: #344955;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.registration-form h1 {
+    position: relative;
+    top: -10px; /* Cambia la posición del título */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.nav-Links {
+.registration-form form {
     display: flex;
-    list-style: none;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: auto;
-    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.headerImage {
-    flex-grow: 2;
-    padding: 1% 2% 1% 5%;
+.registration-form .form-row {
+    flex: 1 1 100%; /* Cambia el ancho de los campos */
+    margin-bottom: 20px;
+    
+    display: flex;
+    flex-direction: column;
 }
 
-#header-img {
-  max-width: 80px;
-  border-radius: 5px;
-  border: #4AE4C2 solid 2px;
+.registration-form label {
+    margin-bottom: 5px; 
 }
 
-.nav-link {
-    padding: 8px;
-    margin: 8px;
-    margin-right: 35px;
+.registration-form input[type="text"],
+.registration-form input[type="password"],
+.registration-form select {
+    width: 100%; /* Ancho del 100% del contenedor */
+    padding: 10px; /* Ajusta el relleno según sea necesario */
+    font-size: 16px; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; 
+    box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+}
+.registration-form button[type="submit"] {
+    display: block; 
+    margin: 0 auto; 
+    width: 50%;
+    padding: 10px;
+    background-color: #1f888e;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.nav-Links li a:hover {
-    color: #ffffff;
+
+
+.registration-form button:hover {
+    background-color: #344955; 
 }
 
+.btn-cerrar {
+    position: absolute;
+    top: 100px; 
+    right: 30px; 
+    cursor: pointer; 
+  }
+  
+  .btn-cerrar img {
+    width: 28px; 
+    height: auto; 
+  }
 
-
-/**
- * Estilos para los enlaces de navegación en la página de registro.
- */
-.nav-Links li a {
-    color: #4AE4C2; /* Cambia color texto de los enlaces */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 19px;
+  #mensaje a {
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    color: #4d3a9c; /* Color azul para los enlaces */ 
+    margin: 0 5px; /* Márgenes para separar los enlaces */
 }
 
-#loginLink {
-  color: #ffffff; /* Cambia color texto al pasar el mouse por encima de los enlaces */
+#mensaje a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse sobre los enlaces */
 }
-
-.container {
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.grid {
-  display: flex;
-}
-

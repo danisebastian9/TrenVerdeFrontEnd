@@ -11,61 +11,13 @@ aplicación web.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Iniciar Sesión</title>
         <link rel="stylesheet" href="../../css/header.css">
-        <link rel="stylesheet" href="../../css/form-registro.css">
+        <link rel="stylesheet" href="../../css/styles-registro.css">
         <link rel="stylesheet" href="../../css/footer.css">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/77c4e13a1c.js" crossorigin="anonymous"></script>
         <script defer src="https://media.twiliocdn.com/sdk/js/webchat-v3/releases/1.1.0/webchat.min.js" integrity="sha256-c1l/wwVPqGd5P7Wni+vQ85wSk0UCDqZyUDQRJBKRQO0=" crossorigin="anonymous"></script>
         
-    <script>
-        async function registrarUsuario() {
-            const tipoDocumento = document.getElementById('tipo-documento').value;
-            const numeroDocumento = document.getElementById('numero-documento').value;
-            const nombre = document.getElementById('nombre').value;
-            const genero = document.getElementById('genero').value;
-            const email = document.getElementById('email').value;
-            const telefono = document.getElementById('telefono').value;
-            const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
-            const direccion = document.getElementById('direccion').value;
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const mensaje = document.getElementById('mensaje');
-            mensaje.textContent = '';
-
-            try {
-                const response = await fetch('http://127.0.0.1:8090/trenverde/api/usuarios/registro_usuario', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        tipoDocumento,
-                        numeroDocumento,
-                        nombre,
-                        genero,
-                        email,
-                        telefono,
-                        fechaNacimiento,
-                        direccion,
-                        username,
-                        password,
-                        roles: [{ idRol: 3 }]
-                    })
-                });
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Error ${response.status}: ${errorText}`);
-                }
-
-                const nuevoUsuario = await response.json();
-                mensaje.textContent = `Usuario: ${nuevoUsuario.username} registrado con exito!`;
-            } catch (error) {
-                mensaje.textContent = `Error: ${error.message}`;
-                console.error('Error al registrar usuario:', error);
-            }
-        }
-    </script>
+   
 </head>
 <body>
     <header id="header">
@@ -89,50 +41,13 @@ aplicación web.
     <hr size="1%" width="0%" color="white">
     <main>
         <section class="registration-form">
-            <h1>Crear una cuenta personal</h1>
-            <form onsubmit="event.preventDefault(); registrarUsuario();">
-                <div class="form-row">
-                    <label for="tipo-documento">Tipo de Documento</label>
-                    <select id="tipo-documento" name="tipo-documento">
-                        <option value="Cédula">Cédula de Ciudadania</option>
-                        <option value="Tarjeta Identidad">Tarjeta de Identidad</option>
-                        <option value="Pasaporte">Pasaporte</option>
-                        <option value="Cédula Extranjeria">Cedula Extranjeria</option>
-                        <option value="NIT">NIT</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <label for="numero-documento">Número de Documento</label>
-                    <input type="text" id="numero-documento" name="numero-documento" required>
-                </div>
-                <div class="form-row">
-                    <label for="nombre">Nombres Y Apellidos</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div class="form-row">
-                    <label for="genero">Género</label>
-                    <select id="genero" name="genero" required>
-                        <option value="masculino">Masculino</option>
-                        <option value="femenino">Femenino</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-row">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
-                <div class="form-row">
-                    <label for="fecha-nacimiento">Fecha de Nacimiento</label>
-                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
-                </div>
-                <div class="form-row">
-                    <label for="direccion">Dirección</label>
-                    <input type="text" id="direccion" name="direccion" required>
-                </div>
+            <h1>Inicia Sesión </h1>
+            <div class="btn-cerrar">
+                <a href="../../index.html">
+                    <img src="../../img/borrar.png" alt="cerrar-img">
+                </a>
+            </div>
+            
                 <div class="form-row">
                     <label for="username">Nombre Usuario</label>
                     <input type="text" id="username" name="username" required>
@@ -142,10 +57,15 @@ aplicación web.
                     <input type="password" id="password" name="password" minlength="8" required>
                 </div>
                 <div class="form-row">
-                    <button type="submit">Crear cuenta</button>
+                    <button type="submit">Iniciar Sesión</button>
                 </div>
             </form>
-            <p id="mensaje"></p>
+            <p id="mensaje">
+                Aún no tienes una cuenta en Tren Verde? Crea una cuenta para tu
+                 <a href="../../html/Registro/registro-empresa.html" id="link-empresarial"> Empresa</a>
+                  o como <a href="../../html/Registro/registro-cliente.html" id="link-cliente">Cliente</a>.
+            </p>
+            
         </section>
     </main>
 

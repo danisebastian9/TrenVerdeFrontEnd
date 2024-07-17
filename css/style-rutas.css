@@ -191,7 +191,7 @@ h1{
 }
 
 /* style responsive*/
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   
   
   .info-section {
@@ -200,13 +200,13 @@ h1{
 }
 
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 800px) and (max-width: 1024px) {
   .info-section {
     flex: 0 1 calc(50% - 20px); 
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   
   .marker {
     width: 24px; 
@@ -214,7 +214,7 @@ h1{
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
  
   #map-container {
     padding: 10px; 

@@ -124,7 +124,7 @@ p {
 }
 
 /*responsive*/ 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .section-container {
         flex-direction: column;
         text-align: center;
@@ -150,7 +150,7 @@ p {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
     h1 {
         font-size: 24px;
     }
