@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 32vw;
     width: 38vw;
     color: #4AE4C2;
     border-radius: 18px;
@@ -57,6 +58,8 @@
 
 }
 
-
+#features {
+    padding: 53px;
+}
  
  
