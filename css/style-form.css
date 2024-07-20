@@ -1,0 +1,237 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+/*style for section one selection*/
+.selection {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .radio-label {
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .radio-input {
+    display: none;
+  }
+  .radio-label .radio-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+  }
+  .radio-label .radio-circle::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #bbcdf8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease-in-out;
+  }
+  .radio-input:checked + .radio-circle::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .radio-label {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.radio-input {
+    display: none; /* Ocultar el input radio */
+}
+
+.radio-circle {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* Círculo */
+    border: 2px solid #888;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+    
+}
+
+.radio-input:checked + .radio-circle {
+    background-color: #577fbf; /* Color de fondo cuando está seleccionado */
+    border-color: #577fbf;
+}
+
+/* Estilo para la clase .selection */
+.selection {
+    margin-bottom: 10px;
+}
+
+  /* style for the buttons  */
+.btn-agendar,
+.btn-cancelar {
+  padding: 10px 20px;
+  margin: 0 10px; 
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-agendar {
+  background-color: #fff;
+  color: #2192fc;
+  border-color: #2192fc;
+}
+
+.btn-cancelar {
+  background-color: #fff;
+  color: #a59dfd;
+  border-color: #a59dfd;
+}
+
+.btn-agendar:hover,
+.btn-cancelar:hover {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-agendar:hover {
+  background-color: #2192fc;
+  border-color: #2192fc;
+}
+
+.btn-cancelar:hover {
+  background-color: #a59dfd;
+  border-color: #a59dfd;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 100px; 
+    right: 30px; 
+    cursor: pointer; 
+  }
+  
+  .btn-cerrar img {
+    width: 28px; 
+    height: auto; 
+  }
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    margin-top: 20px; /* Agregar margen superior */
+}
+/* style for sections form*/ 
+h1{
+   color: #244973;
+   text-align: center;
+   font-size: 32px;
+   margin-top: 10px;
+   margin-right: 20px;
+}
+
+
+/* style first column*/
+.containers{
+    
+   display: flex;
+    flex-direction: row-reverse;
+    max-width: 80%;
+    
+}
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en filas */
+}
+.section-1, .section-2{
+    width: calc(50% - 40px); /* 50% menos el doble del padding horizontal */
+    margin: 20px; /* Margen entre las secciones */
+    border: 2px solid #8ca8c7; /* Borde inicial transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: border-color 0.3s ease-in-out; /* Transición para el color del borde */
+    box-sizing: border-box; /* Incluir el padding y border en el ancho */
+
+    /* Estilo cuando se pasa el mouse sobre la sección */
+    &:hover {
+        border-color: #007bff; /* Color del borde al pasar el mouse */
+    }
+}
+
+.section-1 {
+    order: 1; /* Cambia el orden a 1, lo pone antes en el flujo */
+}
+.section-1 button {
+    margin-bottom: 10px;
+}
+.section-2 {
+    width: calc(40% - 40px); /* Ancho del 40% menos el doble del padding horizontal */
+    margin: 20px 0 20px 20px; /* Margen: arriba, derecha, abajo, izquierda */
+    
+}
+.section-2 {
+    width: calc(40% - 40px); /* Ancho del 40% menos el doble del padding horizontal */
+    margin: 20px 0 20px 20px; /* Ajuste de margen según necesidad */
+    max-height: 250px; /* Ejemplo de altura máxima */
+    overflow: hidden; /* Ocultar contenido que desborde */
+    padding: 20px;
+}
+
+.column-1 {
+    padding: 20px; /* Espaciado interno */
+}
+
+.section-1 form {
+    padding: 20px; /* Añadir espaciado interno al formulario */
+}
+.section-1 input[type="date"],
+.section-1 input[type="time"],
+.section-1 select,
+.section-1 textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+form textarea {
+    width: calc(100% - 22px); /* Ancho completo, restando el espacio del padding */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio inferior */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+
+
+h4{
+    color:#8488f7 ;
+}
+
+/* style responsive*/
+@media (max-width: 800px) {
+    .containers {
+        flex-direction: column; 
+        max-width: 100%; 
+    }
+
+    .section-1, .section-2 {
+        width: calc(100% - 40px); 
+        margin: 20px auto; 
+    }
+}

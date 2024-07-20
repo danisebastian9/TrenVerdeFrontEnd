@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga</title>
+    <link rel="stylesheet" href="../../../css/header.css">
+    <link rel="stylesheet" href="../../../css/style-form.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/77c4e13a1c.js" crossorigin="anonymous"></script>
+    <script defer src="https://media.twiliocdn.com/sdk/js/webchat-v3/releases/1.1.0/webchat.min.js"
+        integrity="sha256-c1l/wwVPqGd5P7Wni+vQ85wSk0UCDqZyUDQRJBKRQO0=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="page-wrapper">
+        <header id="header">
+            <nav id="nav-bar">
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="nav-Links">
+                    <li class="headerImage"><a class="nav-link" href="../../index.html"><img id="header-img"
+                                src="../../../img/trenLogo.jpeg" alt="Company logo"></a></li>
+                    <li><a class="nav-link" href="../../../index.html">Inicio</a></li>
+                    <li><a class="nav-link" href="../../Rutas/Rutas.html">Rutas</a></li>
+                    <li><a class="nav-link" href="../../Turismo/Turismo.html">Turismo</a></li>
+                    <li><a class="nav-link" href="../../../html/Carga Pesada/carga-pesada.html">Carga</a></li>
+                    <li><a class="nav-link" href="#">Noticias</a></li>
+                    <li><a id="loginLink" class="nav-link" href="../../../html/Inicio Sesion/iniciar-sesion.html">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="btn-cerrar">
+            <a href="../../Carga Pesada/carga-pesada.html">
+                <img src="../../../img/borrar.png" alt="cerrar-img">
+            </a>
+        </div>
+        
+
+         <h1>Transporte de viveres e insumos</h1>
+
+<div class="containers">
+   
+
+    <section class="section-1">
+        <div class="column-1">
+    <img src="../../../img/agregar.png" alt="agregar-reserva">
+       <h4>Nueva Reserva</h4>
+        <p>
+         Completa el siguiente formulario para reservar tu cupo.
+        </p>
+    
+    </div>
+       
+        <form action="#">
+            <label for="tipoProducto">Seleccione el Tipo de Producto a transportar</label>
+            <select id="tipoProducto" name="tipoProducto">
+              <option value="seleccion">Selección</option>
+              <option value="granos">Granos y Cerelaes</option>
+              <option value="alimentos">Productos lácteos </option>
+              <option value="nit">Productos procesados</option>
+              <option value="cereales"> Productos farmacéuticos</option>
+              <option value="cereales">Productos mecánicos</option>
+            </select>
+            
+           
+            <label for="cadenaFrio">Requiere cadena de frío</label>
+            <select id="numeroPuesto" name="numeroPuesto">
+              <option value="seleccion">Selección</option>
+              <option value="1">Cámaras frigoríficas</option>
+              <option value="2">Contenedores refrigerados</option>
+              <option value="3">Refrigeración o congelación</option>
+              <option value="4">Termómetros y registradores de temperatura</option>
+            </select>
+    
+            <div class="selection">
+                <label class="radio-label">
+                  <input type="radio" name="selection" class="radio-input" value="precedero" checked>
+                  <span class="radio-circle"></span> Precedero
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="selection" class="radio-input" value="no-precedero">
+                  <span class="radio-circle"></span> No Precedero
+                </label>
+              </div>
+    
+            <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha">
+    
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" name="hora">
+            
+    <div class="form-group">
+        <label for="nota">Nota:</label>
+        <textarea id="nota" name="nota" rows="4" required></textarea>
+    </div>
+    
+          </form>
+          <div class="button-container">
+              <button type="submit" class="btn-agendar">Agendar</button>
+              <button type="submit" class="btn-cancelar">Cancelar </button>
+            </div>
+            
+       
+    </section>
+    <section class="section-2">
+        <div class="column-2">
+            <img src="../../../img/reserva.png" alt="">
+            <h4>Mis Reservas</h4>
+            <p>
+                Aquí puedes ver las reservas realizadas.
+            </p>
+        
+        </div>
+       
+    
+    </section>
+
+</div>
+</div>
+
+        <footer class="footer">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="../../../img/trenLogo.jpeg" alt="Logo Tren Verde" class="footer__logo-img">
+                    <h2 class="footer__title">Tren Verde</h2>
+                </div>
+                <div class="footer__column footer__column--mapa">
+                    <h3 class="footer__heading">Mapa del sitio</h3>
+                    <ul class="footer__list">
+                        <li><a href="../../../index.html" class="footer__link">Inicio</a></li>
+                        <li><a href="../../../html/Rutas/Rutas.html" class="footer__link">Rutas</a></li>
+                        <li><a href="../../../html/Turismo/Turismo.html" class="footer__link">Turismo</a></li>
+                        <li><a href="../../../html/Carga Pesada/carga-pesada.html" class="footer__link">Carga</a></li>
+                        <li><a href="#" class="footer__link">Noticias</a></li>
+                        <li><a href="../../../html/Registro/registro-empresa.html" class="footer__link">Registro</a></li>
+                        <li><a href="#" class="footer__link">Inicio sesión</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column footer__column--utilidades">
+                    <h3 class="footer__heading">Utilidades</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Contacto</a></li>
+                        <li><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                        <li><a href="#" class="footer__link">Privacidad</a></li>
+                        <li><a href="#" class="footer__link">Términos</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column footer__column--desarrollado">
+                    <h3 class="footer__heading">Desarrollado por:</h3>
+                    <ul class="footer__list">
+                        <li>Adriana Lucía Caicedo López</li>
+                        <li>Carmen Lucía Castro Ruiz</li>
+                        <li>Daniel Sebastián Cubides Suárez</li>
+                        <li>Felipe Andrés López</li>
+                        <li>Nohad Farid El Khatib Rodríguez</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link">
+                        <img src="../../../img/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <img src="../../../img/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <img src="../../../img/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <img src="../../../img/email.png" alt="Email">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 Tren Verde, Inc</p>
+            </div>
+            <div id="twilio-webchat-widget-root"></div>
+        </footer>
+        <script>
+            window.addEventListener("load", () => {
+                const appConfig = {
+                    deploymentKey: "CVc8f2aefad95827c36140560e96194e20"
+                }
+                Twilio.initWebchat(appConfig);
+            })
+        </script>
+    </div>
+</body>
+<script src="../../../js/app.js"></script>
+</html>

@@ -82,11 +82,14 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
+    width: calc(30% - 40px); /* 30% menos el doble del padding horizontal */
     max-width: 400px;
     text-align: center;
     margin-bottom: 20px; /* Espacio entre cajas */
+    box-sizing: border-box; /* Incluir padding y border en el ancho */
 }
+
+
 
 /* Cambia los valores de top y left para ajustar la posición de los cuadros */
 .info-box h2 {
@@ -99,35 +102,25 @@
     margin-bottom: 15px;
 }
 
-.info-box .btn {
-    background-color: #2ecc71;
+.btn {
+    display: inline-block; /* Asegura que el botón tenga un ancho automático según el contenido */
+}
+
+.btn a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    background-color: #2eccaf;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    display: inline-block; /* Asegura que el enlace se comporte como un bloque en línea */
 }
 
-.info-box .btn:hover {
-    background-color: #27ae60;
+.btn a:hover {
+    background-color: #1f839f;
 }
 
-
-
-
-
-/* Media queries para ajustes responsivos */
-@media (max-width: 768px) {
-    .hero-overlay {
-        top: 30%; /* Ajusta la posición del overlay para pantallas más pequeñas */
-    }
-    
-    .info-box {
-        width: 100%; /* Ajusta el ancho al 100% en pantallas pequeñas */
-        max-width: none; /* Reinicia el ancho máximo */
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .hero-title {
         font-size: 2em;
     }
@@ -139,13 +132,17 @@
     .hero-description {
         font-size: 0.9em;
     }
-
+    
     .hero-overlay {
-        width: 90%;
+        width: 90%; /* Ajusta el ancho del overlay para pantallas más pequeñas */
+    }
+    
+    .info-box {
+        width: calc(50% - 40px); /* 50% menos el doble del padding horizontal */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .hero-title {
         font-size: 1.8em;
     }
@@ -157,9 +154,16 @@
     .hero-description {
         font-size: 0.8em;
     }
-
+    
     .hero-overlay {
-        width: 100%;
+        width: 100%; /* Ajusta el ancho del overlay al 100% para pantallas más pequeñas */
         padding: 0 10px; /* Ajuste adicional al padding para pantallas más pequeñas */
     }
+    
+    .info-box {
+        width: calc(100% - 40px); /* Ancho completo menos el doble del padding horizontal */
+    }
 }
+
+
+

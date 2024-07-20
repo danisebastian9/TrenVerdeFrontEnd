@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61ce6272-a116-43e3-bf46-4f2251de6760" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/TrenVerdeFrontEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TrenVerdeFrontEnd.iml" afterDir="false" />
-    </list>
+    <list default="true" id="61ce6272-a116-43e3-bf46-4f2251de6760" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +48,7 @@
       <workItem from="1720989302779" duration="4000" />
       <workItem from="1720989315352" duration="13000" />
       <workItem from="1720989335823" duration="11000" />
+      <workItem from="1721254069520" duration="47000" />
     </task>
     <servers />
   </component>
